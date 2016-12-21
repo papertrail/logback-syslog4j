@@ -25,9 +25,9 @@ Add this to your `pom.xml`:
 
 Then add the appender to your `logback.xml`.
 
-If not using Maven, download [logback-syslog4j-1.0.0.jar][] and
-[syslog4j-0.9.46-bin.jar][] (or latest).  Place these files in the classpath,
-in addition to Logback itself.
+If not using Maven, download [logback-syslog4j-1.0.0.jar][] and the latest
+[syslog4j][] JAR.  Place these files in the classpath, in addition to Logback
+itself.
 
 #### Logging via TCP with TLS (recommended)
 
@@ -107,4 +107,4 @@ in addition to Logback itself.
 [syslog4j]: http://syslog4j.org/
 [logback-syslog-appender]: http://logback.qos.ch/manual/appenders.html#SyslogAppender
 [logback-syslog4j-1.0.0.jar]: http://search.maven.org/remotecontent?filepath=com/papertrailapp/logback-syslog4j/1.0.0/logback-syslog4j-1.0.0.jar
-[syslog4j-0.9.46-bin.jar]: http://syslog4j.org
+[syslog4j-0.9.46-bin.jar]: http://syslog4j.org/downloads/syslog4j-0.9.46-bin.jar
