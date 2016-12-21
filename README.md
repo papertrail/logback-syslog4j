@@ -107,4 +107,3 @@ itself.
 [syslog4j]: http://syslog4j.org/
 [logback-syslog-appender]: http://logback.qos.ch/manual/appenders.html#SyslogAppender
 [logback-syslog4j-1.0.0.jar]: http://search.maven.org/remotecontent?filepath=com/papertrailapp/logback-syslog4j/1.0.0/logback-syslog4j-1.0.0.jar
-[syslog4j-0.9.46-bin.jar]: http://syslog4j.org/downloads/syslog4j-0.9.46-bin.jar
