@@ -15,7 +15,11 @@ public class Syslog4jAppender<E> extends AppenderBase<E> {
 
     @Override
     protected void append(E loggingEvent) {
-        syslog.log(getSeverityForEvent(loggingEvent), layout.doLayout(loggingEvent));
+        int severityForEvent = getSeverityForEvent(loggingEvent);
+        String message = layout.doLayout(loggingEvent);
+        for (String line : message.split("\n")) {
+            syslog.log(severityForEvent, line);
+        }
    }
 
     @Override
