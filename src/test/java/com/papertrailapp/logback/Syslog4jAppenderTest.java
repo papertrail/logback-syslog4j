@@ -1,21 +1,22 @@
 package com.papertrailapp.logback;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.graylog2.syslog4j.server.SyslogServer;
+import org.graylog2.syslog4j.server.impl.event.printstream.PrintStreamSyslogServerEventHandler;
+import org.graylog2.syslog4j.server.impl.net.tcp.TCPNetSyslogServerConfig;
+import org.graylog2.syslog4j.server.impl.net.tcp.ssl.SSLTCPNetSyslogServerConfig;
+import org.graylog2.syslog4j.server.impl.net.udp.UDPNetSyslogServerConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import org.productivity.java.syslog4j.server.SyslogServer;
-import org.productivity.java.syslog4j.server.impl.event.printstream.PrintStreamSyslogServerEventHandler;
-import org.productivity.java.syslog4j.server.impl.net.tcp.TCPNetSyslogServerConfig;
-import org.productivity.java.syslog4j.server.impl.net.tcp.ssl.SSLTCPNetSyslogServerConfig;
-import org.productivity.java.syslog4j.server.impl.net.udp.UDPNetSyslogServerConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 public class Syslog4jAppenderTest extends TestCase {
     ByteArrayOutputStream serverStream;

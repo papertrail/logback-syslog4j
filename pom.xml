@@ -36,9 +36,15 @@
     <url>https://github.com/papertrail/logback-syslog4j</url>
   </scm>
 
+  <prerequisites>
+    <maven>3.0.4</maven>
+  </prerequisites>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <logback.version>1.1.2</logback.version>
+    <logback.version>1.2.1</logback.version>
+    <syslog4j.version>0.9.58</syslog4j.version>
+    <junit.version>4.12</junit.version>
   </properties>
 
   <dependencies>
@@ -55,15 +61,15 @@
     </dependency>
 
     <dependency>
-      <groupId>org.syslog4j</groupId>
+      <groupId>org.graylog2</groupId>
       <artifactId>syslog4j</artifactId>
-      <version>0.9.30</version>
+      <version>${syslog4j.version}</version>
     </dependency>
 
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -80,7 +86,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
+        <version>3.0.1</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -108,7 +114,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
+        <version>1.6</version>
         <executions>
           <execution>
             <id>sign-artifacts</id>
@@ -123,7 +129,7 @@
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.2</version>
+        <version>1.6.8</version>
         <extensions>true</extensions>
         <configuration>
           <serverId>ossrh</serverId>
