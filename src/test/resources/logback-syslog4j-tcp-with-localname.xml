@@ -1,5 +1,5 @@
 <configuration>
-	<appender name="TEST-TCP" class="com.tyutyutyu.logback.Syslog4jAppender">
+	<appender name="TEST-TCP-WITH-LOCALNAME" class="com.tyutyutyu.logback.Syslog4jAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
 			<pattern>%date %-5level %logger{35} - %message%n</pattern>
 		</layout>
@@ -8,6 +8,7 @@
 			<host>localhost</host>
 			<port>45553</port>
 			<ident>syslog-test</ident>
+			<localName>customLocalName</localName>
 
 			<!-- make logger synchronous for the tests -->
 			<threaded>false</threaded>
@@ -15,6 +16,6 @@
 	</appender>
 
 	<root level="DEBUG">
-		<appender-ref ref="TEST-TCP" />
+		<appender-ref ref="TEST-TCP-WITH-LOCALNAME" />
 	</root>
 </configuration>

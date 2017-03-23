@@ -1,20 +1,20 @@
 <configuration>
-  <appender name="TEST-TLS" class="com.papertrailapp.logback.Syslog4jAppender">
-    <layout class="ch.qos.logback.classic.PatternLayout">
-      <pattern>%date %-5level %logger{35} - %message%n</pattern>
-    </layout>
+	<appender name="TEST-TLS" class="com.tyutyutyu.logback.Syslog4jAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%date %-5level %logger{35} - %message%n</pattern>
+		</layout>
 
-    <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.ssl.SSLTCPNetSyslogConfig">
-      <host>localhost</host>
-      <port>45554</port>
-      <ident>syslog-test</ident>
+		<syslogConfig class="org.graylog2.syslog4j.impl.net.tcp.ssl.SSLTCPNetSyslogConfig">
+			<host>localhost</host>
+			<port>45554</port>
+			<ident>syslog-test</ident>
 
-      <!-- make logger synchronous for the tests -->
-      <threaded>false</threaded>
-    </syslogConfig>
-  </appender>
+			<!-- make logger synchronous for the tests -->
+			<threaded>false</threaded>
+		</syslogConfig>
+	</appender>
 
-  <root level="DEBUG">
-    <appender-ref ref="TEST-TLS" />
-  </root>
+	<root level="DEBUG">
+		<appender-ref ref="TEST-TLS" />
+	</root>
 </configuration>

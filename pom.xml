@@ -1,136 +1,176 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.papertrailapp</groupId>
-  <artifactId>logback-syslog4j</artifactId>
-  <version>1.0.0</version>
-  <packaging>jar</packaging>
+	<groupId>com.tyutyutyu</groupId>
+	<artifactId>logback-syslog4j</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 
-  <name>logback-syslog4j</name>
-  <description>Logback appender using syslog4j to send via syslog</description>
-  <url>https://github.com/papertrail/logback-syslog4j</url>
+	<name>logback-syslog4j</name>
+	<description>Logback appender using syslog4j to send via syslog</description>
+	<url>https://github.com/tyutyutyu/logback-syslog4j</url>
 
-  <developers>
-    <developer>
-      <id>eric</id>
-      <name>Eric Lindvall</name>
-      <email>eric@papertrailapp.com</email>
-    </developer>
-  </developers>
+	<scm>
+		<connection>scm:git:https://github.com/tyutyutyu/logback-syslog4j.git</connection>
+		<developerConnection>scm:git:git@github.com:tyutyutyu/logback-syslog4j.git</developerConnection>
+		<url>https://github.com/tyutyutyu/logback-syslog4j</url>
+		<tag>HEAD</tag>
+	</scm>
 
-  <issueManagement>
-    <url>https://github.com/papertrail/logback-syslog4j/issues</url>
-    <system>GitHub Issues</system>
-  </issueManagement>
+	<distributionManagement>
+		<repository>
+			<id>bintray</id>
+			<url>https://api.bintray.com/maven/tyutyutyu/com.tyutyutyu.papertrail/logback-syslog4j</url>
+		</repository>
+	</distributionManagement>
 
-  <licenses>
-    <license>
-      <name>MIT License</name>
-      <url>http://www.opensource.org/licenses/mit-license.php</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+	<developers>
+		<developer>
+			<id>tyutyutyu</id>
+			<name>István Földházi</name>
+			<email>istvan.foldhazi@gmail.com</email>
+		</developer>
+	</developers>
 
-  <scm>
-    <url>https://github.com/papertrail/logback-syslog4j</url>
-  </scm>
+	<issueManagement>
+		<url>https://github.com/tyutyutyu/logback-syslog4j/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <logback.version>1.1.2</logback.version>
-  </properties>
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 
-  <dependencies>
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-core</artifactId>
-      <version>${logback.version}</version>
-    </dependency>
+	<prerequisites>
+		<maven>3.0</maven>
+	</prerequisites>
 
-    <dependency>
-      <groupId>ch.qos.logback</groupId>
-      <artifactId>logback-classic</artifactId>
-      <version>${logback.version}</version>
-    </dependency>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
 
-    <dependency>
-      <groupId>org.syslog4j</groupId>
-      <artifactId>syslog4j</artifactId>
-      <version>0.9.30</version>
-    </dependency>
+		<maven-compiler-plugin.version>3.5.1</maven-compiler-plugin.version>
+		<maven-javadoc-plugin.version>2.10.4</maven-javadoc-plugin.version>
+		<maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
 
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+		<assertj.version>3.6.2</assertj.version>
+		<logback.version>1.2.2</logback.version>
+		<junit.version>4.12</junit.version>
+		<syslog4j.version>0.9.58</syslog4j.version>
+	</properties>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-  </distributionManagement>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+	<dependencies>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.graylog2</groupId>
+			<artifactId>syslog4j</artifactId>
+			<version>${syslog4j.version}</version>
+		</dependency>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.9.1</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+		<!-- TEST -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<fork>true</fork>
+					<encoding>${project.build.sourceEncoding}</encoding>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.2</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>false</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-source-plugin</artifactId>
+							<version>${maven-source-plugin.version}</version>
+							<executions>
+								<execution>
+									<id>attach-sources</id>
+									<goals>
+										<goal>jar</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>${maven-javadoc-plugin.version}</version>
+							<executions>
+								<execution>
+									<id>attach-javadocs</id>
+									<goals>
+										<goal>jar</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-release-plugin</artifactId>
+							<version>${maven-release-plugin.version}</version>
+							<configuration>
+								<useReleaseProfile>false</useReleaseProfile>
+								<releaseProfiles>release</releaseProfiles>
+								<autoVersionSubmodules>true</autoVersionSubmodules>
+								<tagNameFormat>@{version}</tagNameFormat>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
 </project>

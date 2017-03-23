@@ -1,3 +1,5 @@
+Forked from https://github.com/papertrail/logback-syslog4j
+
 ## logback-syslog4j
 
 A [Logback][] appender that leverages [syslog4j][] to send log messages to
@@ -17,7 +19,7 @@ Add this to your `pom.xml`:
 
 ``` xml
     <dependency>
-      <groupId>com.papertrailapp</groupId>
+      <groupId>com.tyutyutyu</groupId>
       <artifactId>logback-syslog4j</artifactId>
       <version>1.0.0</version>
     </dependency>
