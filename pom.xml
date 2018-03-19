@@ -55,9 +55,9 @@
     </dependency>
 
     <dependency>
-      <groupId>org.syslog4j</groupId>
+      <groupId>org.graylog2</groupId>
       <artifactId>syslog4j</artifactId>
-      <version>0.9.30</version>
+      <version>0.9.60</version>
     </dependency>
 
     <dependency>
