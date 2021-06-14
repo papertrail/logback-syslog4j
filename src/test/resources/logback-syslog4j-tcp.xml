@@ -4,7 +4,7 @@
       <pattern>%date %-5level %logger{35} - %message%n</pattern>
     </layout>
 
-    <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.TCPNetSyslogConfig">
+    <syslogConfig class="org.graylog2.syslog4j.impl.net.tcp.TCPNetSyslogConfig">
       <host>localhost</host>
       <port>45553</port>
       <ident>syslog-test</ident>
