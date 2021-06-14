@@ -1,6 +1,6 @@
 ## logback-syslog4j
 
-A [Logback][] appender that leverages [syslog4j][] to send log messages to
+A [Logback][] appender that leverages [syslog4j-graylog2][] to send log messages to
 remote systems via syslog.
 
 ### Why?
@@ -26,7 +26,7 @@ Add this to your `pom.xml`:
 Then add the appender to your `logback.xml`.
 
 If not using Maven, download [logback-syslog4j-1.0.0.jar][] and the latest
-[syslog4j][] JAR.  Place these files in the classpath, in addition to Logback
+[syslog4j-graylog2][] JAR.  Place these files in the classpath, in addition to Logback
 itself.
 
 #### Logging via TCP with TLS (recommended)
@@ -37,7 +37,7 @@ itself.
       <pattern>%-5level %logger{35}: %m%n%xEx</pattern>
     </layout>
 
-    <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.ssl.SSLTCPNetSyslogConfig">
+    <syslogConfig class="org.graylog2.syslog4j.impl.net.tcp.ssl.SSLTCPNetSyslogConfig">
       <!-- remote system to log to -->
       <host>localhost</host>
       <!-- remote port to log to -->
@@ -62,7 +62,7 @@ itself.
       <pattern>%-5level %logger{35}: %m%n%xEx</pattern>
     </layout>
 
-    <syslogConfig class="org.productivity.java.syslog4j.impl.net.tcp.TCPNetSyslogConfig">
+    <syslogConfig class="org.graylog2.syslog4j.impl.net.tcp.TCPNetSyslogConfig">
       <!-- remote system to log to -->
       <host>localhost</host>
       <!-- remote port to log to -->
@@ -87,7 +87,7 @@ itself.
       <pattern>%-5level %logger{35}: %m%n%xEx</pattern>
     </layout>
 
-    <syslogConfig class="org.productivity.java.syslog4j.impl.net.udp.UDPNetSyslogConfig">
+    <syslogConfig class="org.graylog2.syslog4j.impl.net.udp.UDPNetSyslogConfig">
       <!-- remote system to log to -->
       <host>localhost</host>
       <!-- remote port to log to -->
@@ -104,6 +104,6 @@ itself.
 
 
 [Logback]: http://logback.qos.ch/
-[syslog4j]: http://syslog4j.org/
+[syslog4j-graylog2]: https://github.com/graylog-labs/syslog4j-graylog2
 [logback-syslog-appender]: http://logback.qos.ch/manual/appenders.html#SyslogAppender
 [logback-syslog4j-1.0.0.jar]: http://search.maven.org/remotecontent?filepath=com/papertrailapp/logback-syslog4j/1.0.0/logback-syslog4j-1.0.0.jar
